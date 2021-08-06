@@ -19,7 +19,7 @@ setuptools.setup(
     install_requires=reqs,
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/Noupin/MultiImage",
+    url="git@github.com:Noupin/MultiImage",
     project_urls={
         "Bug Tracker": "https://github.com/Noupin/MultiImage/issues",
     },
