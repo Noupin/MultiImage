@@ -4,3 +4,6 @@
 #Development Environments
 env/
 dist/
+
+#Cache
+__pycache__/
