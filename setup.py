@@ -19,17 +19,9 @@ setuptools.setup(
     install_requires=reqs,
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="git@github.com:Noupin/MultiImage",
-    project_urls={
-        "Bug Tracker": "https://github.com/Noupin/MultiImage/issues",
-    },
-    classifiers=[
-        "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: MIT License",
-        "Operating System :: OS Independent",
-    ],
-    package_dir={"": "src"},
+    url="https://github.com/Noupin/MultiImage",
     packages=['MultiImage'],
     python_requires=">=3.6",
+    py_modules=['MultiImage'],
     
 )
