@@ -18,8 +18,8 @@ from moviepy import editor as mediaEditor
 from typing import Any, Dict, List, Tuple, Generator, Union
 
 #First Party Imports
-from exceptions.CVToPIL import CVToPILError
-from exceptions.IncompatibleShapes import IncompatibleShapeError
+from ..exceptions.CVToPIL import CVToPILError
+from ..exceptions.IncompatibleShapes import IncompatibleShapeError
 
 
 def PILToCV(image: Image.Image) -> np.ndarray:
