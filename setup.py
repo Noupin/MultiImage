@@ -8,7 +8,7 @@ reqs = [str(ir.requirement) for ir in install_reqs]
 
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
-
+print(setuptools.find_packages())
 
 setuptools.setup(
     name="MultiImage",
@@ -20,8 +20,8 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/Noupin/MultiImage",
-    packages=[setuptools.find_packages('.')],
+    packages=setuptools.find_packages(),
     python_requires=">=3.6",
-    py_modules=[setuptools.find_packages('.')],
+    py_modules=setuptools.find_packages(),
     
 )
