@@ -19,9 +19,9 @@ import tensorflow as tf
 from typing import Any, Dict, Tuple, Union
 
 #First Party Imports
-from utils.image import (PILToCV, CVToPIL, compressImage, editImageMetadata,
-                         imageFilesize, resizeImage, loadImage, saveImage,
-                         viewImage, encodeImage, cropImage)
+from MultiImage.utils.image import (PILToCV, CVToPIL, compressImage, editImageMetadata,
+                                    imageFilesize, resizeImage, loadImage, saveImage,
+                                    viewImage, encodeImage, cropImage)
 
 class MultiImage:
     """
