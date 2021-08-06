@@ -8,6 +8,8 @@ Image class to convert between 8 bit uint images for cv processing, \
 from __future__ import annotations
 
 __author__ = "Noupin"
+__version__ = "1.0.0"
+name = "MultiImage"
 
 #Third Party Imports
 import cv2
@@ -17,9 +19,9 @@ import tensorflow as tf
 from typing import Any, Dict, Tuple, Union
 
 #First Party Imports
-from src.utils.image import (PILToCV, CVToPIL, compressImage, editImageMetadata,
-                             imageFilesize, resizeImage, loadImage, saveImage,
-                             viewImage, encodeImage, cropImage)
+from utils.image import (PILToCV, CVToPIL, compressImage, editImageMetadata,
+                         imageFilesize, resizeImage, loadImage, saveImage,
+                         viewImage, encodeImage, cropImage)
 
 class MultiImage:
     """
