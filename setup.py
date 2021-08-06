@@ -20,8 +20,8 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/Noupin/MultiImage",
-    packages=[setuptools.find_packages('MultiImage')],
+    packages=[setuptools.find_packages('.')],
     python_requires=">=3.6",
-    py_modules=[setuptools.find_packages('MultiImage')],
+    py_modules=[setuptools.find_packages('.')],
     
 )
