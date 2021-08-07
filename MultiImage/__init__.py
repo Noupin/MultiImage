@@ -1,8 +1,7 @@
 #pylint: disable=C0103, C0301
 """
 Image class to convert between 8 bit uint images for cv processing, \
-32 bit float images for tensorflow, PIL images for ease of use, and \
-8 bit BGR uint images to save using CV.
+PIL images for ease of use, and 8 bit BGR uint images to save using CV.
 """
 
 from __future__ import annotations
@@ -15,7 +14,6 @@ name = "MultiImage"
 import cv2
 import numpy as np
 from PIL import Image
-import tensorflow as tf
 from typing import Any, Dict, Tuple, Union
 
 #First Party Imports
@@ -25,9 +23,8 @@ from .utils.image import (PILToCV, CVToPIL, compressImage, editImageMetadata,
 
 class MultiImage:
     """
-    Deals with the intricacies of the image types needed for TensorFlow \
-    training, OpenCV, and PIL aswell as the different color types of the \
-    OpenCV images.
+    Deals with the intricacies of the image types needed for OpenCV, \
+    and PIL aswell as the different color types of the OpenCV images.
     
     Args:
         image (Union[Image.Image, np.ndarray, str]): The image to be instanced.
@@ -37,7 +34,6 @@ class MultiImage:
         self.PILImage: Image.Image = None
         self.CVImage: np.ndarray = None
         self.CVBGRImage: np.ndarray = None
-        self.TFImage: np.ndarray = None
         self.byteSize = 0
         
         self.update(image)
@@ -73,7 +69,6 @@ class MultiImage:
         else:
             raise TypeError(f"The type {type(image)} is not supported in the MultiImage constructor")
         
-        self.TFImage = (self.CVImage/255.).astype(np.float32)
         self.byteSize = imageFilesize(self.PILImage)
 
 
@@ -173,16 +168,4 @@ class MultiImage:
 
     def setMetadata(self, key: str, value: Dict[int, Any]) -> None:
         image = editImageMetadata(self.PILImage, key, value)
-        self.update(image)
-
-
-    def adjustHue(self, adjustment: float) -> None:
-        """
-        Adjusts the hue of the image by adjustment.
-        
-        Args:
-            adjustment (float): The hue adjustment delta.
-        """        
-
-        image = np.array(tf.image.adjust_hue(self.CVImage, adjustment))
         self.update(image)
